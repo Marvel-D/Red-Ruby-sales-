@@ -31,18 +31,4 @@ const Btn = ({
   );
 };
 
-// const ButtonMailto = ({ mailto, label }) => {
-//   return (
-//     <Link
-//       href="#"
-//       onClick={(e) => {
-//         window.location.href = `mailto:${mailto}`;
-//         e.preventDefault();
-//       }}
-//     >
-//       {label}
-//     </Link>
-//   );
-// };
-
 export { Btn };

@@ -16,7 +16,6 @@ export default function SignInPage() {
   const [hidePassword, setHidePassword] = useState(true);
   const [passwordType, setPasswordType] = useState("password");
 
-  //! fix visibility issue
   const handlePasswordVisibility = () => {
     setHidePassword(!hidePassword);
   };
