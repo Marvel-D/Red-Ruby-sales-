@@ -14,14 +14,13 @@ import { Btn } from "@/app/components/shared";
 
 export default function SignInPage() {
   const [hidePassword, setHidePassword] = useState(true);
-  const [passwordType, setPasswordType] = useState("password");
 
   const handlePasswordVisibility = () => {
     setHidePassword(!hidePassword);
   };
 
   const handleInputChanges = (e: any) => {
-    console.log(e.target.value);
+    console.log(e.target.value || "");
   };
 
   return (
@@ -36,6 +35,7 @@ export default function SignInPage() {
             className="border border-black"
             priority
           />
+
           <div className="text-center">
             <h2 className="">welcome back</h2>
             <small>Login to your account</small>
@@ -71,7 +71,7 @@ export default function SignInPage() {
           </InputGroup>
         </Stack>
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col gap-3 items-center">
           <small>
             Don&rsquo;t have an account?{" "}
             <span>

@@ -1,5 +1,5 @@
 {
-  "name": "red-ruby",
+  "name": "blue-ruby",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,6 +14,7 @@
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "clsx": "^2.1.0",
+    "firebase": "^10.7.2",
     "framer-motion": "^10.18.0",
     "next": "14.0.4",
     "react": "^18",
