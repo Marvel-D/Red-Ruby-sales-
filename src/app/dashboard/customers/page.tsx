@@ -7,17 +7,17 @@ export default function Page() {
   return (
     <div className="h-full flex flex-col border border-black">
       <section className="flex w-full justify-between items-center">
-        <h3>Orders Summary</h3>
+        <h3>Customers Summary</h3>
         <ActionBtn
-          text="Create a New Order"
+          text="Add a New Customer"
           variant="solid"
           color="blue"
-          icon={<PiGraph />}
+          icon={<PiPlus />}
         />
       </section>
 
       <section className="h-full">
-        <div className="my-4 grid grid-cols-3 gap-3 justify-between items-center h-[120px]">
+        <div className="my-4 grid grid-cols-2 gap-3 justify-between items-center h-[120px]">
           <ContainerW style={""}>
             <section className="flex justify-between items-center">
               <PiGraph />
@@ -34,22 +34,7 @@ export default function Page() {
               <p>0</p>
             </section>
           </ContainerW>
-          <ContainerW style={""}>
-            <section className="flex justify-between items-center">
-              <PiGraph />
-              <p>This Week</p>
-            </section>
-            <section className="grid grid-cols-3 grid-rows-2 gap-x-8 gap-y-2 justify-between items-center">
-              {/* header */}
-              <p>All orders</p>
-              <p>Pending</p>
-              <p>Completed</p>
-              {/* values */}
-              <p>0</p>
-              <p>0</p>
-              <p>0</p>
-            </section>
-          </ContainerW>
+
           <ContainerW style={""}>
             <section className="flex justify-between items-center">
               <PiGraph />

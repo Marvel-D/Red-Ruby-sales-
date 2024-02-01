@@ -1,14 +1,10 @@
 "use client";
-import {
-  FiChevronDown,
-  FiChevronRight,
-  FiChevronsRight,
-  FiHome,
-} from "react-icons/fi";
+import { FiChevronRight, FiHome } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 import { Button, Select } from "@chakra-ui/react";
 import Link from "next/link";
 import { Rye } from "next/font/google";
+import Image from "next/image";
 
 const rye = Rye({ subsets: ["latin"], weight: ["400"] });
 
@@ -18,6 +14,25 @@ const Logo = () => {
       <span className={`${rye.className} text-blue-700`}>Blue Ruby</span>
     </h1>
   );
+};
+
+const LoadingScreen = () => {
+  return (
+    <div className="flex w-full h-screen justify-center items-center">
+      <Image
+        alt="loading..."
+        src={"/images/loadingGif.gif"}
+        width={500}
+        height={500}
+        priority={true}
+        // priority=(true)
+      ></Image>
+    </div>
+  );
+};
+
+const ComingSoonScreen = () => {
+  return <p>coming Soon</p>;
 };
 
 const Btn = ({
@@ -50,6 +65,43 @@ const Btn = ({
         {text}
       </Button>
     </Link>
+  );
+};
+
+const ActionBtn = ({
+  color,
+  text,
+  func,
+  icon,
+  width,
+  variant,
+  padding,
+}: {
+  color: string;
+  text: string;
+  func?: any;
+  icon?: any;
+  width?: string;
+  variant: string;
+  padding?: string;
+}) => {
+  return (
+    <div
+      onClick={func}
+      className={`whitespace-nowrap ${
+        width || "w-fit"
+      }  text-xs tablet:text-base hover:opacity-80 flex items-center rounded transition ease-in-out delay-150`}
+    >
+      <Button
+        className={`capitalize w-full`}
+        leftIcon={icon}
+        colorScheme={color}
+        variant={variant}
+        size="sm"
+      >
+        {text}
+      </Button>
+    </div>
   );
 };
 
@@ -93,4 +145,12 @@ const Breadcrumb = () => {
   );
 };
 
-export { Logo, Btn, Dropdown, Breadcrumb };
+export {
+  Logo,
+  Btn,
+  ActionBtn,
+  Dropdown,
+  Breadcrumb,
+  LoadingScreen,
+  ComingSoonScreen,
+};

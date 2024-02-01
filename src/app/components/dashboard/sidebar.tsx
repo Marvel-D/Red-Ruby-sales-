@@ -49,7 +49,7 @@ const Sidebar = () => {
       id: 4,
       title: "Conversations",
       icon: <IoChatbubbleEllipsesOutline />,
-      link: "/dashboard/conversation",
+      link: "/dashboard/chat",
     },
     {
       id: 5,
@@ -58,20 +58,19 @@ const Sidebar = () => {
       link: "/dashboard/settings",
     },
   ];
-  //  color scheme is black background, white text, blue hovers
+
   return (
-    <div className="flex flex-col w-[300px] max-h-screen min-h-screen gap-8 p-4 border border-black bg-black text-white whitespace-nowrap">
+    <div className="flex flex-col w-[300px] max-h-screen min-h-screen gap-8 p-4 bg-white text-black whitespace-nowrap">
       <Logo />
-      {/* gap-[130px] */}
       <section id="routes" className="flex flex-col justify-between h-full">
         <ul className="flex flex-col gap-1">
           {PageRoutes.map((route: PageRoutes) => (
             <Link href={route.link} key={route.id}>
               <li
                 className={clsx(
-                  "p-3 rounded hover:bg-blue-500 flex items-center gap-2",
+                  "p-3 rounded hover:bg-pri-80 flex items-center gap-2",
                   {
-                    "bg-blue-700": path === route.link,
+                    "bg-pri-100 text-white": path === route.link,
                   }
                 )}
               >
@@ -84,11 +83,11 @@ const Sidebar = () => {
 
         <section className="text-base">
           <section className="flex flex-col gap-3 mb-6">
-            <div className="flex items-center rounded gap-2 bg-slate-400 bg-opacity-70 p-2">
+            <div className="flex items-center rounded gap-2 bg-slate-300 bg-opacity-70 p-2">
               <FiHeadphones className="text-xl" />
-              <p>Contact Support</p>
+              <p className="text-sm">Contact Support</p>
             </div>
-            <div className="rounded bg-slate-400 bg-opacity-70 p-2">
+            {/* <div className="rounded bg-sec-20 bg-opacity-70 p-2">
               <div className="flex items-center gap-2 mb-2">
                 <FiGift className="text-xl" />
                 <p>Free Gifts Awaits You!</p>
@@ -98,10 +97,10 @@ const Sidebar = () => {
 
                 <FiChevronRight className="text-base" />
               </div>
-            </div>
+            </div> */}
           </section>
 
-          <div className="flex items-center gap-3 text-red-200">
+          <div className="flex items-center gap-3 text-err-100 px-2">
             <FiLogOut className="text-lg" />
             <p>Logout</p>
           </div>

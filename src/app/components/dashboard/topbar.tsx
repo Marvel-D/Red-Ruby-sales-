@@ -3,10 +3,10 @@ import { FaBell } from "react-icons/fa";
 
 const Topbar = () => {
   return (
-    <div className="w-full flex flex-col justify-between h-[70px] py-1 px-2 border border-black bg-white text-black">
+    <div className="w-full flex flex-col justify-between h-[70px] py-1 px-2 bg-white text-black">
       <section className="flex justify-between items-center">
-        <p className="">
-          <span className="font-bold text-xl">Welcome</span> to Blue Ruby
+        <p className="font-bold text-base">
+          Welcome back <span className="text-lg">user</span>
         </p>
         <div className="flex justify-between items-center gap-3">
           <Dropdown />
