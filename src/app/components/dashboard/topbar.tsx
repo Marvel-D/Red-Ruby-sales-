@@ -1,3 +1,5 @@
+"use client";
+import { useAuth } from "@/app/hooks/useAuth";
 import { Breadcrumb, Dropdown } from "../shared";
 import { FaBell } from "react-icons/fa";
 

@@ -1,8 +1,13 @@
+"use client";
 import { ContainerW } from "@/app/components/dashboard";
 import { PiGraph } from "react-icons/pi";
 import { IoPieChart } from "react-icons/io5";
+import { useAuth } from "@/app/hooks/useAuth";
 
 export default function Page() {
+  const { userData } = useAuth();
+  console.log(userData);
+
   return (
     <div className="grid grid-cols-3 grid-rows-5 gap-4 justify-between h-full">
       <ContainerW style={""}>

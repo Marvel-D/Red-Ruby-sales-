@@ -1,11 +1,11 @@
-const Firebase = {
-  apiKey: "AIzaSyBS0R8RVDPZ1lFEhF3AXu4g8hmHXKXquLA",
-  authDomain: "red-ruby-marvel.firebaseapp.com",
-  projectId: "red-ruby-marvel",
-  storageBucket: "red-ruby-marvel.appspot.com",
-  messagingSenderId: "611989937967",
-  appId: "1:611989937967:web:352c3165b56e3e09940bda",
-  measurementId: "G-8Y3LENL0YP",
+const FirebaseConfig = {
+  apiKey: process.env.NEXT_PUBLIC_APIKEY,
+  authDomain: process.env.NEXT_PUBLIC_AUTHDOMAIN,
+  projectId: process.env.NEXT_PUBLIC_PROJECTID,
+  storageBucket: process.env.NEXT_PUBLIC_STORAGEBUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_MESSAGINGSENDERID,
+  appId: process.env.NEXT_PUBLIC_APPID,
+  measurementId: process.env.NEXT_PUBLIC_MEASUREMENTID,
 };
 
-export { Firebase };
+export { FirebaseConfig };

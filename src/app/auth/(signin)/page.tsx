@@ -8,24 +8,41 @@ import {
   InputLeftElement,
   Stack,
   InputRightElement,
+  Button,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import { Btn } from "@/app/components/shared";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { iLoginInput } from "@/app/lib/definitions";
+import { useAuth } from "@/app/hooks/useAuth";
 
 export default function SignInPage() {
-  const [hidePassword, setHidePassword] = useState(true);
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<iLoginInput>();
 
+  const [hidePassword, setHidePassword] = useState(true);
   const handlePasswordVisibility = () => {
     setHidePassword(!hidePassword);
   };
 
-  const handleInputChanges = (e: any) => {
-    console.log(e.target.value || "");
+  const { loginWithEP } = useAuth();
+  // const handleInputChanges = (e: any) => {
+  //   console.log(e.target.value || "");
+  // };
+
+  const onSubmit: SubmitHandler<iLoginInput> = (data) => {
+    loginWithEP(data);
   };
 
   return (
     <section className="h-[430px] w-[350px] border border-white bg-white py-8 px-3 shadow-lg">
-      <form className="h-full flex flex-col items-center justify-between">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="h-full flex flex-col items-center justify-between"
+      >
         <div className="flex flex-col items-center">
           <Image
             src="/logomark.png"
@@ -49,9 +66,10 @@ export default function SignInPage() {
             </InputLeftElement>
             <Input
               type="text"
-              name="email"
+              // name="email"
               placeholder="Email Address"
-              onChange={handleInputChanges}
+              {...register("email", { required: true })}
+              // onChange={handleInputChanges}
             />
           </InputGroup>
           <InputGroup>
@@ -60,9 +78,10 @@ export default function SignInPage() {
             </InputLeftElement>
             <Input
               type={hidePassword ? "password" : "text"}
-              name="password"
+              // name="password"
               placeholder="Password"
-              onChange={handleInputChanges}
+              {...register("password", { required: true })}
+              // onChange={handleInputChanges}
               required
             />
             <InputRightElement onClick={handlePasswordVisibility}>
@@ -79,13 +98,20 @@ export default function SignInPage() {
             </span>
           </small>
 
-          <Btn
-            text="Login"
-            route="/dashboard"
-            color="blue"
-            variant="solid"
-            width="w-fit"
-          />
+          <div
+            className={`whitespace-nowrap 
+         "w-fit"
+        text-xs tablet:text-base hover:opacity-80 flex items-center rounded transition ease-in-out delay-150`}
+          >
+            <Button
+              className={`capitalize w-full`}
+              colorScheme="blue"
+              size="sm"
+              type="submit"
+            >
+              Login
+            </Button>
+          </div>
         </div>
       </form>
     </section>

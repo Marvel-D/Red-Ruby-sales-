@@ -1,51 +1,16 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Firebase } from "./util/configs";
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { Btn, Logo } from "./components/shared";
-
-const app = initializeApp(Firebase);
-// const analytics = getAnalytics(app);
+import { HomeNav } from "./components/homeNav";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center gap-20  px-24 py-12 border-4 border-red-700">
-      <section className="flex w-full items-center justify-between">
-        <Logo />
-        <div className="flex justify-between items-center gap-4 ">
-          <Btn
-            text="Contact Us"
-            route="/contact"
-            color="transparent"
-            variant="ghost"
-            width="w-[150px]"
-            padding="p-8"
-          />
-          <Btn
-            text="login"
-            route="/auth"
-            color="blue"
-            variant="outline"
-            width="w-[150px]"
-            padding="p-8"
-          />
-          <Btn
-            text="sign up"
-            route="/auth/signup"
-            color="blue"
-            variant="solid"
-            width="w-[150px]"
-            padding="p-8"
-          />
-        </div>
-      </section>
+      <HomeNav />
       <section className="flex w-full justify-between items-center">
         <div>
           <h1 className="font-black text-6xl mb-3">
             Money & Sense: <br />
             Master your wealth with <br />
-            <span className="text-blue-700">2 FISHES</span>
+            <span className="text-blue-700">CANARY</span>
           </h1>
           <p>
             Allocate your income to investments, savings, and expenses. Discover{" "}

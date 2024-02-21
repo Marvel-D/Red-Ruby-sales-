@@ -10,9 +10,10 @@ const rye = Rye({ subsets: ["latin"], weight: ["400"] });
 
 const Logo = () => {
   return (
-    <h1 className={`text-3xl font-black `}>
-      <span className={`${rye.className} text-blue-700`}>Blue Ruby</span>
-    </h1>
+    <Link href={"/"} className={`text-3xl font-black `}>
+      <span className={`${rye.className} text-blue-700`}>Canary</span>{" "}
+      <span className="text-xs">PA</span>
+    </Link>
   );
 };
 
@@ -75,7 +76,6 @@ const ActionBtn = ({
   icon,
   width,
   variant,
-  padding,
 }: {
   color: string;
   text: string;
